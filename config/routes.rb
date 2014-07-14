@@ -1,4 +1,5 @@
 Bali::Application.routes.draw do
+  devise_for :users
   resources :blog_entries, path: 'blog'
 
   # The priority is based upon order of creation: first created -> highest priority.
