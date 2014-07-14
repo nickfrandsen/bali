@@ -5,6 +5,7 @@ Bali::Application.routes.draw do
   get 'pricing' => 'pages#pricing', as: :pricing_page
   get 'about' => 'pages#about', as: :about_page
   get 'blog' => 'pages#blog', as: :blog_page
+  get 'blog_item' => 'pages#blog_item', as: :blog_item_page
 
   # You can have the root of your site routed with "root"
   root 'pages#home'
