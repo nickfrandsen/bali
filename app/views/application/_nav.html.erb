@@ -1,0 +1,35 @@
+<ul class="nav navbar-nav">
+    <li class="active">
+      <%= link_to 'Home', root_path %>
+    </li>
+
+    <li>
+      <%= link_to 'How it works', how_it_works_page_path %>
+    </li>
+
+    <li>
+      <%= link_to 'Pricing', pricing_page_path %>
+    </li>
+
+    <li>
+      <%= link_to 'About', about_page_path %>
+    </li>
+
+    <li>
+      <%= link_to 'Blog', blog_page_path %>
+    </li>
+
+    <!-- Search Block -->
+    <li>
+        <i class="search fa fa-search search-btn"></i>
+        <div class="search-open">
+            <div class="input-group animated fadeInDown">
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-btn">
+                    <button class="btn-u" type="button">Go</button>
+                </span>
+            </div>
+        </div>
+    </li>
+    <!-- End Search Block -->
+</ul>
