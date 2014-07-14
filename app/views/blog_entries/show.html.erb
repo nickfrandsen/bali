@@ -1,0 +1,47 @@
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Blog Item</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">Blog</a></li>
+            <li class="active">Blog Item</li>
+        </ul>
+    </div>
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part ===-->
+<div class="container content blog-page blog-item">
+    <!--Blog Post-->
+  <div class="blog margin-bottom-40">
+        <div class="blog-img">
+            <%= image_tag 'img/sliders/revolution/bg8.jpg', class: "img-responsive" %>
+        </div>
+      <h2><%= @blog_entry.title %></h2>
+        <div class="blog-post-tags">
+            <ul class="list-unstyled list-inline blog-info">
+                <li><i class="fa fa-calendar"></i> <%= @blog_entry.created_at.to_formatted_s(:long) %></li>
+                <li><i class="fa fa-pencil"></i> <%= @blog_entry.author %></li>
+                <li><i class="fa fa-comments"></i> <a href="#">0 Comments</a></li>
+            </ul>
+        </div>
+        <%= @blog_entry.content %>
+        <%= link_to 'Edit', edit_blog_entry_path(@blog_entry) %> |
+        <%= link_to 'Delete', @blog_entry, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <!--End Blog Post-->
+
+    <hr>
+
+    <!-- Recent Comments -->
+    <div class="media">
+        <h3>Comments</h3>
+        <%= render 'disqus' %>
+
+    </div><!--/media-->
+    <!-- End Recent Comments -->
+
+    <!-- End Comment Form -->
+</div><!--/container-->
+<!--=== End Content Part ===-->

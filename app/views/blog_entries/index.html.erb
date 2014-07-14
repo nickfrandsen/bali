@@ -13,7 +13,33 @@
 
 <!--=== Content Part ===-->
 <div class="container content">
+    <%= link_to 'New Blog entry', new_blog_entry_path %>
     <ul class="timeline-v1">
+        <% @blog_entries.each do |blog_entry| %>
+          <li class="<%= cycle(nil, 'timeline-inverted') %>">
+              <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
+              <div class="timeline-panel">
+                  <div class="timeline-heading">
+                      <%= image_tag 'img/timeline/img1.1.jpg', class: "img-responsive" %>
+                  </div>
+                  <div class="timeline-body text-justify">
+                      <h2><a href="#"><%= blog_entry.title %></a></h2>
+                      <%= blog_entry.content %>
+                      <%= link_to 'Edit', edit_blog_entry_path(blog_entry) %> |
+                      <%= link_to 'Delete', blog_entry, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <br>
+                      <%= link_to 'Read More', blog_entry, class: "btn-u btn-u-sm" %>
+                  </div>
+                  <div class="timeline-footer">
+                      <ul class="list-unstyled list-inline blog-info">
+                          <li><i class="fa fa-clock-o"></i> <%= blog_entry.created_at.to_formatted_s(:long) %></li>
+                          <li><i class="fa fa-comments-o"></i> <a href="#">0 Comments</a></li>
+                      </ul>
+                      <a class="likes" href="#"><i class="fa fa-heart"></i>239</a>
+                  </div>
+              </div>
+          </li>
+        <% end %>
         <li>
             <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
             <div class="timeline-panel">

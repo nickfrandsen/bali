@@ -1,10 +1,11 @@
 Bali::Application.routes.draw do
+  resources :blog_entries, path: 'blog'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get 'how-it-works' => 'pages#how-it-works', as: :how_it_works_page
   get 'pricing' => 'pages#pricing', as: :pricing_page
   get 'about' => 'pages#about', as: :about_page
-  get 'blog' => 'pages#blog', as: :blog_page
   get 'blog_item' => 'pages#blog_item', as: :blog_item_page
 
   # You can have the root of your site routed with "root"
