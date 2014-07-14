@@ -23,7 +23,7 @@
 /*Parallax Backgrounds
 ------------------------------------*/
 .parallax-bg {
-	background: url(assets/img/blur/img1.jpg) 50% 0 repeat fixed;
+	background: image-url('img/blur/img1.jpg') 50% 0 repeat fixed;
 }
 
 /*Parallax Counter Block*/
@@ -46,7 +46,7 @@
 
 /*Parallax Team*/
 .parallax-team {
-	background: url(assets/img/team/faces.jpg) 50% 0 repeat fixed;
+	background: image-url('img/team/faces.jpg') 50% 0 repeat fixed;
 }
 
 .parallax-team,
