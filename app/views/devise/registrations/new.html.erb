@@ -1,18 +1,62 @@
-<h2>Sign up</h2>
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Registration</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">Pages</a></li>
+            <li class="active">Registration</li>
+        </ul>
+    </div><!--/container-->
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<!--=== Content Part ===-->
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'reg-page' }) do |f| %>
+              <%= devise_error_messages! %>
+                <div class="reg-header">
+                    <h2>Register a new account</h2>
+                    <p>Already Signed Up? <%= link_to 'Click here', new_user_session_path %> to login to your account.</p>
+                </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+                <label>First Name</label>
+                <input type="text" class="form-control margin-bottom-20">
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+                <label>Last Name</label>
+                <input type="text" class="form-control margin-bottom-20">
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+                <label>Email Address <span class="color-red">*</span></label>
+                <%= f.email_field :email, autofocus: true, class: 'form-control margin-bottom-20' %>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>Password <span class="color-red">*</span></label>
+                        <%= f.password_field :password, autocomplete: "off", class: 'form-control margin-bottom-20' %>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Confirm Password <span class="color-red">*</span></label>
+                        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control margin-bottom-20' %>
+                    </div>
+                </div>
 
-<%= render "devise/shared/links" %>
+                <hr>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            I have read and accept <a href="page_terms.html" class="color-green">Terms and Conditions</a>
+                        </label>
+                    </div>
+                    <div class="col-lg-6 text-right">
+                        <%= f.submit "Sign up", class: 'btn-u' %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div><!--/container-->
+<!--=== End Content Part ===-->
