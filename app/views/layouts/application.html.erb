@@ -19,8 +19,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="wrapper">
+    <%= render 'header' %>
+    <%= yield %>
+  </div>
 </body>
 </html>
