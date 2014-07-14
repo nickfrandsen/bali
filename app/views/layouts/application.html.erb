@@ -13,9 +13,10 @@
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.ico">
-
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= yield :before_scripts %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= yield :after_scripts %>
   <%= csrf_meta_tags %>
 </head>
 <body>
