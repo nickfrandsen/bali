@@ -1,0 +1,66 @@
+<div class="coming-soon-border"></div>
+
+<!--=== Content Part ===-->
+<div class="container">
+    <!-- Coming Soon Content -->
+    <div class="row">
+        <div class="col-md-12 coming-soon">
+            <h1>Coming Soon!</h1>
+            <p>Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat ut non libero magna fusce condimentum eleifend enim a feugiat.</p>
+
+            <p>Dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat ut non libero magna fusce condimentum eleifend enim a feugiat.</p><br>
+        </div>
+    </div>
+
+    <!-- Coming Soon Plugn -->
+    <div class="coming-soon-plugin">
+        <div id="defaultCountdown"></div>
+    </div>
+
+    <!-- Coming Soon Footer -->
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="social-icons">
+                <li><a href="#" data-original-title="Feed" class="social_rss"></a></li>
+                <li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
+                <li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
+                <li><a href="#" data-original-title="Goole Plus" class="social_googleplus"></a></li>
+                <li><a href="#" data-original-title="Pinterest" class="social_pintrest"></a></li>
+                <li><a href="#" data-original-title="Linkedin" class="social_linkedin"></a></li>
+                <li><a href="#" data-original-title="Vimeo" class="social_vimeo"></a></li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="coming-soon-copyright">
+                <p>2014 © Unify - Responsive Website Template</p>
+            </div>
+        </div>
+    </div>
+</div><!--/container-->
+<!--=== End Content Part ===-->
+
+<script>
+    $.backstretch([
+      "<%= image_path 'img/bg/1.jpg' %>",
+      "<%= image_path 'img/bg/2.jpg' %>",
+      "<%= image_path 'img/bg/3.jpg' %>"
+      ], {
+        fade: 1000,
+        duration: 7000
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        var austDay = new Date();
+        austDay.setMonth( austDay.getMonth( ) + 1 );
+        $('#defaultCountdown').countdown({until: austDay});
+        $('#year').text(austDay.getFullYear());
+    });
+</script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+    });
+</script>

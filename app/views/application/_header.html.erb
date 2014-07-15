@@ -6,7 +6,7 @@
             <!-- Topbar Navigation -->
             <ul class="loginbar pull-right">
                 <% if current_user %>
-                    <li><%= link_to 'My Account', root_path %></li>
+                    <li><%= link_to 'My Account', checkout_confirmation_path %></li>
                     <li class="topbar-devider"></li>
                     <li><%= link_to 'Logout', destroy_user_session_path, method: 'delete' %></li>
                 <% else %>

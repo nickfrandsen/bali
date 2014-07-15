@@ -1,5 +1,5 @@
 Bali::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   resources :blog_entries, path: 'blog'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -8,6 +8,10 @@ Bali::Application.routes.draw do
   get 'pricing' => 'pages#pricing', as: :pricing_page
   get 'about' => 'pages#about', as: :about_page
   get 'blog_item' => 'pages#blog_item', as: :blog_item_page
+  get 'checkout/start' => 'checkout#start', as: :checkout_start
+  get 'checkout/summary' => 'checkout#summary', as: :checkout_summary
+  post 'checkout/create' => 'checkout#create', as: :checkout_create
+  get 'checkout/confirmation' => 'checkout#confirmation', as: :checkout_confirmation
 
   # You can have the root of your site routed with "root"
   root 'pages#home'

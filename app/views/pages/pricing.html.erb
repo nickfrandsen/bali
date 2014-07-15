@@ -82,7 +82,7 @@
                         Receptionist service <span>Officia deserunt mollitia</span>
                     </h3>
                     <h4 class="price">
-                        <i>$</i>29<i>.95</i>
+                        <i>$</i><%= get_integer_part @receptionist_service_plan.price %><i>.95</i>
                         <span class="hidden-md hidden-lg">Per Month</span>
                     </h4>
                 </div>
@@ -145,7 +145,7 @@
                     </li>
                 </ul>
                 <div class="btn-group btn-group-justified">
-                    <%= link_to new_user_registration_path, class: 'btn-u btn-block dropdown-toggle text-center' do %>
+                    <%= link_to checkout_start_path(subscription_plan: @receptionist_service_plan), class: 'btn-u btn-block dropdown-toggle text-center' do %>
                         <i class="fa fa-shopping-cart"></i>
                         Sign Up
                         <i class="fa fa-angle-down"></i>
@@ -160,7 +160,7 @@
                         Customer service <span>Officia deserunt mollitia</span>
                     </h3>
                     <h4 class="price">
-                        <i>$</i>69<i>.99</i>
+                        <i>$</i><%= get_integer_part @customer_service_plan.price %><i>.95</i>
                         <span class="hidden-md hidden-lg">Per Month</span>
                     </h4>
                 </div>
@@ -223,7 +223,7 @@
                     </li>
                 </ul>
                 <div class="btn-group btn-group-justified">
-                    <%= link_to new_user_registration_path, class: 'btn-u btn-block dropdown-toggle text-center' do %>
+                    <%= link_to checkout_start_path(subscription_plan: @customer_service_plan), class: 'btn-u btn-block dropdown-toggle text-center' do %>
                         <i class="fa fa-shopping-cart"></i>
                         Sign Up
                         <i class="fa fa-angle-down"></i>
@@ -238,7 +238,7 @@
                         Enterprise <span>Officia deserunt mollitia</span>
                     </h3>
                     <h4 class="price">
-                        <i>$</i>99<i>.00</i>
+                        <i>$</i><%= get_integer_part @enterprise_plan.price %><i>.95</i>
                         <span class="hidden-md hidden-lg">Per Month</span>
                     </h4>
                 </div>
@@ -301,7 +301,7 @@
                     </li>
                 </ul>
                 <div class="btn-group btn-group-justified">
-                    <%= link_to new_user_registration_path, class: 'btn-u btn-block dropdown-toggle text-center' do %>
+                    <%= link_to checkout_start_path(subscription_plan: @enterprise_plan), class: 'btn-u btn-block dropdown-toggle text-center' do %>
                         <i class="fa fa-shopping-cart"></i>
                         Sign Up
                         <i class="fa fa-angle-down"></i>

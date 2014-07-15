@@ -1,0 +1,86 @@
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+  <div class="container">
+        <h1 class="pull-left">Purchase summary</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">Pages</a></li>
+            <li class="active">Purchase summary</li>
+        </ul>
+    </div><!--/container-->
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part ===-->
+<div class="container content">
+    <!--Invoice Header-->
+    <div class="row invoice-header">
+        <div class="col-xs-6">
+            <!-- You also can use a title instead of image
+            <h2 class="pull-left">Product Invoice</h2>
+            -->
+        </div>
+        <div class="col-xs-6 invoice-numb">
+
+            #<%= Digest::MD5.hexdigest(current_user.id.to_s).upcase %> / <%= Date.today.to_formatted_s(:long) %>
+            <span>Auiderer facilis consectetur</span>
+        </div>
+    </div>
+    <!--End Invoice Header-->
+
+    <!--Invoice Table-->
+    <div class="panel panel-grey margin-bottom-40">
+        <div class="panel-heading">
+            <h3 class="panel-title">Payment Invoice</h3>
+        </div>
+        <div class="panel-body">
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est</p>
+        </div>
+        <table class="table table-striped invoice-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Item</th>
+                    <th class="hidden-sm">Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><%= @plan.name %></td>
+                    <td class="hidden-sm"><%= @plan.description %></td>
+                    <td><%= number_to_currency @plan.price %> a month</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--End Invoice Table-->
+
+    <!--Invoice Footer-->
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="tag-box tag-box-v6">
+                <h2>Fusce condimentum eleifend enim</h2>
+                <p><strong>Note:</strong> Atharum quidem rerum facexpe ditailis est et  distinctio lorem ipsum dolor sit amet consectetur adipiscing elit.</p><br>
+                <address>
+                    25, Lorem Lis Street, Orange <br>
+                    California, US <br>
+                    Phone: 800 123 3456 <br>
+                    Fax: 800 123 3456 <br>
+                    Email: <a href="mailto:info@example.com">info@example.com</a>
+                </address>
+            </div>
+        </div>
+        <div class="col-sm-6 text-right">
+            <ul class="list-unstyled invoice-total-info">
+                <li><strong>VAT:</strong> $0</li>
+                <li><strong>Grand Total:</strong> <%= number_to_currency @plan.price %> a month</li>
+            </ul>
+            <button class="btn-u" onclick="javascript:window.print();"><i class="fa fa-print"></i> Print</button>
+            <%= link_to 'Pay now', checkout_create_path, method: :post, class: 'btn-u' %>
+        </div>
+    </div>
+    <!--End Invoice Footer-->
+</div><!--/container-->
+<!--=== End Content Part ===-->
