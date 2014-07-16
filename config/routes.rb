@@ -10,7 +10,7 @@ Bali::Application.routes.draw do
   get 'blog_item' => 'pages#blog_item', as: :blog_item_page
   get 'checkout/start' => 'checkout#start', as: :checkout_start
   get 'checkout/summary' => 'checkout#summary', as: :checkout_summary
-  post 'checkout/create' => 'checkout#create', as: :checkout_create
+  get 'checkout/create' => 'checkout#create', as: :checkout_create
   get 'checkout/confirmation' => 'checkout#confirmation', as: :checkout_confirmation
 
   # You can have the root of your site routed with "root"

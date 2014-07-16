@@ -78,7 +78,7 @@
                 <li><strong>Grand Total:</strong> <%= number_to_currency @plan.price %> a month</li>
             </ul>
             <button class="btn-u" onclick="javascript:window.print();"><i class="fa fa-print"></i> Print</button>
-            <%= link_to 'Pay now', checkout_create_path, method: :post, class: 'btn-u' %>
+            <%= link_to 'Pay now', @plan.subscribe_paypal_plan_url, class: 'btn-u' %>
         </div>
     </div>
     <!--End Invoice Footer-->
