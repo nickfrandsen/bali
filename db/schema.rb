@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20140716103632) do
 
   create_table "plans", force: true do |t|
     t.text     "name"
+    t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "price"
     t.text     "description"
     t.text     "subscribe_paypal_plan_url"
   end
