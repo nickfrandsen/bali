@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20140715160050) do
 
   create_table "plans", force: true do |t|
     t.text     "name"
+    t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "price"
     t.text     "description"
   end
 
